@@ -1,0 +1,6 @@
+goos: linux
+goarch: amd64
+BenchmarkGapBufferInsert-8   	20578706	        76.1 ns/op
+BenchmarkStringInsert-8      	  305408	     64250 ns/op
+PASS
+ok  	.../gapbuffer	21.298s

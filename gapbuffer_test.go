@@ -172,8 +172,15 @@ func TestGapBufferDel(t *testing.T) {
 func BenchmarkGapBufferInsert(b *testing.B) {
 	gb := NewGapBuffer()
 
-	for i := 0; i < 10000; i++ {
+	for i := 0; i < b.N; i++ {
 		gb.Insert(0, []byte("test"))
 	}
+}
 
+func BenchmarkStringInsert(b *testing.B) {
+	s := make([]byte, 0)
+
+	for i := 0; i < b.N; i++ {
+		s = append([]byte("test"), s...)
+	}
 }
